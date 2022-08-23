@@ -10,9 +10,9 @@ use this while IncreaseAllowance step to authorize dePay for major operation </b
 
 **Payload:**
 
-| Name                      | Type   | Description               |
-| ------------------------- | ------ | ------------------------- |
-| ftContractAddress         | STRING | ftContractAddress         |
-| ftContractOwnerPrivateKey | STRING | ftContractOwnerPrivateKey |
-| spender                   | STRING | accountAddressToBeAllowed |
-| amount                    | STRING | amountOfFTToBeAllowed     |
+| Name                      | Type   | Description                   |
+| ------------------------- | ------ | ----------------------------- |
+| ftContractAddress         | STRING | ft Contract Address           |
+| ftContractOwnerPrivateKey | STRING | ft Contract Owner Private Key |
+| spender                   | STRING | account Address To Be Allowed |
+| amount                    | STRING | amount Of FT To Be Allowed    |
