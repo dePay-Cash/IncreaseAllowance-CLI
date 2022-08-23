@@ -10,7 +10,7 @@ payload = {
 }
 */
 
-test("test call Api ", async () => {
+test("test increaseFTAllowance function", async () => {
   const response = await increaseFTAllowance();
   expect(response).toStrictEqual({});
 });
