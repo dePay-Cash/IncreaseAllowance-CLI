@@ -2,9 +2,11 @@
 
 use this while IncreaseAllowance step to authorize dePay for major operation </br></br>
 
-## How to run
+## How to run IncreaseAllowance script
 
-`node . -ftContractAddress -ftContractOwnerPrivateKey -spender -amount`
+`npm install`
+
+`node . -ftContractAddress="" -ftContractOwnerPrivateKey="" -spender="" -amount=""`
 
 **Payload:**
 
