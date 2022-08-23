@@ -17,39 +17,54 @@ payload = {
 }
 */
 const increaseFTAllowance = async (payload) => {
-  try {
-    const ftContractAddress = payload.ftContractAddress;
-    const privateKey = payload.ftContractOwnerPrivateKey;
-    const spender = payload.spender;
-    const amount = payload.amount;
-    zilliqa.wallet.addByPrivateKey(privateKey);
-    const ftContract = zilliqa.contracts.at(ftContractAddress);
-    let tx = {
-      version: VERSION,
-      amount: new BN(0),
-      gasPrice: units.toQa("4000", units.Units.Li),
-      gasLimit: Long.fromNumber(10000),
-    };
-    const response = await ftContract.call(
-      "IncreaseAllowance",
-      [
-        {
-          vname: "spender",
-          type: "ByStr32",
-          value: spender,
-        },
-        {
-          vname: "amount",
-          type: "Uint128",
-          value: amount,
-        },
-      ],
-      tx
+  if (verify(payload)) {
+    try {
+      const ftContractAddress = payload.ftContractAddress;
+      const privateKey = payload.ftContractOwnerPrivateKey;
+      const spender = payload.spender;
+      const amount = payload.amount;
+      zilliqa.wallet.addByPrivateKey(privateKey);
+      const ftContract = zilliqa.contracts.at(ftContractAddress);
+      let tx = {
+        version: VERSION,
+        amount: new BN(0),
+        gasPrice: units.toQa("4000", units.Units.Li),
+        gasLimit: Long.fromNumber(10000),
+      };
+      const response = await ftContract.call(
+        "IncreaseAllowance",
+        [
+          {
+            vname: "spender",
+            type: "ByStr32",
+            value: spender,
+          },
+          {
+            vname: "amount",
+            type: "Uint128",
+            value: amount,
+          },
+        ],
+        tx
+      );
+      return response;
+    } catch (err) {
+      throw new Error(err);
+    }
+  } else {
+    throw new Error(
+      "invalid arguments spender| amount | ftContractAddress | ftContractOwnerPrivateKey"
     );
-    return response;
-  } catch (err) {
-    throw new Error(err);
   }
 };
 
+const verify = (payload) => {
+  if (
+    payload.ftContractAddress !== undefined &&
+    payload.ftContractOwnerPrivateKey !== undefined &&
+    payload.spender !== undefined &&
+    payload.amount !== undefined
+  )
+    return true;
+};
 module.exports = increaseFTAllowance;
