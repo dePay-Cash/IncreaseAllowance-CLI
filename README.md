@@ -1,6 +1,6 @@
 # depay-IncreaseAllowance
 
-use this while IncreaseAllowance step to authorize dePay for major operation </br></br>
+use this script while IncreaseAllowance step to authorize dePay account for major operations </br></br>
 
 ## How to run IncreaseAllowance script
 
