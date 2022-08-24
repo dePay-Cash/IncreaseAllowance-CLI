@@ -1,5 +1,3 @@
-require("dotenv").config();
-
 const { Zilliqa } = require("@zilliqa-js/zilliqa");
 const { BN, Long, bytes, units } = require("@zilliqa-js/util");
 
@@ -59,6 +57,7 @@ const increaseFTAllowance = async (payload) => {
 };
 
 const verify = (payload) => {
+  console.log(payload);
   if (
     payload.ftContractAddress !== undefined &&
     payload.ftContractOwnerPrivateKey !== undefined &&
