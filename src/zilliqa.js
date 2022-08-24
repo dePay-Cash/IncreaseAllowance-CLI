@@ -57,7 +57,6 @@ const increaseFTAllowance = async (payload) => {
 };
 
 const verify = (payload) => {
-  console.log(payload);
   if (
     payload.ftContractAddress !== undefined &&
     payload.ftContractOwnerPrivateKey !== undefined &&
