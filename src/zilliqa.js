@@ -5,21 +5,13 @@ const zilliqa = new Zilliqa("https://dev-api.zilliqa.com"); // mainnet: 'https:/
 const chainId = 333; // mainnet: chainId = 1
 const msgVersion = 1;
 const VERSION = bytes.pack(chainId, msgVersion);
+const spender = "0x22c86b9f50C4A0518C7AbE05C72CC160f035D050";
 
-/*
-payload = {
-    ftContractAddress: <ftContractAddress>, --> type: string
-    ftContractOwnerPrivateKey: <ftContractOwnerPrivateKey>, --> type: string
-    spender: <accountAddressToBeAllowed>, --> type: string
-    amount: <amountOfFTToBeAllowed> --> type: string
-}
-*/
 const increaseFTAllowance = async (payload) => {
   if (verify(payload)) {
     try {
       const ftContractAddress = payload.ftContractAddress;
       const privateKey = payload.ftContractOwnerPrivateKey;
-      const spender = payload.spender;
       const amount = payload.amount;
       zilliqa.wallet.addByPrivateKey(privateKey);
       const ftContract = zilliqa.contracts.at(ftContractAddress);
