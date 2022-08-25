@@ -6,7 +6,7 @@ use this script while IncreaseAllowance step to authorize dePay account for majo
 
 `npm install`
 
-`node . -ftContractAddress="" -ftContractOwnerPrivateKey="" -spender="" -amount=""`
+`node . -ftContractAddress="" -ftContractOwnerPrivateKey="" -amount=""`
 
 **Payload:**
 
@@ -14,5 +14,4 @@ use this script while IncreaseAllowance step to authorize dePay account for majo
 | ------------------------- | ------ | ----------------------------- |
 | ftContractAddress         | STRING | ft Contract Address           |
 | ftContractOwnerPrivateKey | STRING | ft Contract Owner Private Key |
-| spender                   | STRING | account Address To Be Allowed |
 | amount                    | STRING | amount Of FT To Be Allowed    |
