@@ -4,7 +4,8 @@ const payload = require("args-parser")(process.argv);
 
 (async () => {
   try {
-    await increaseFTAllowance(payload);
+    const res = await increaseFTAllowance(payload);
+    console.log(res);
   } catch (err) {
     console.error(err);
   }
