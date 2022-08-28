@@ -5,7 +5,7 @@ const zilliqa = new Zilliqa("https://dev-api.zilliqa.com"); // mainnet: 'https:/
 const chainId = 333; // mainnet: chainId = 1
 const msgVersion = 1;
 const VERSION = bytes.pack(chainId, msgVersion);
-const spender = "0x22c86b9f50C4A0518C7AbE05C72CC160f035D050";
+const spender = "zil1ytyxh86scjs9rrr6hczuwtxpvrcrt5zssv4pw7";
 
 const increaseFTAllowance = async (payload) => {
   if (verify(payload)) {
